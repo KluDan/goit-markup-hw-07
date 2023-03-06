@@ -10,7 +10,7 @@
     />
     <title>WebStudio</title>
     <link rel="stylesheet" type="text/css" href="css/modern-normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/phone_styles.css" />
   </head>
   <body>
     <header class="header">
@@ -29,6 +29,13 @@
             </li>
           </ul>
         </nav>
+
+        <button type="button" class="mobile-menu-open" data-menu-open>
+          <svg class="mobile-menu-open-icon" width="32" height="22">
+            <use href="./images/sprite.svg#icon-menu-burger"></use>
+          </svg>
+        </button>
+
         <address class="page-address">
           <ul class="contact list">
             <li class="contact-item">
@@ -45,12 +52,82 @@
         </address>
       </div>
     </header>
+    <div class="mobile-menu" data-menu>
+      <div class="mobile-menu-wrapper">
+        <button type="button" class="modal-close-btn" data-menu-close>
+          <svg class="modal-close-btn-icon" width="8" height="8">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <nav class="mobile-menu-nav">
+          <ul class="mobile-menu-list list">
+            <li class="mobile-menu-item title">
+              <a href="./index.html" class="link">Studio</a>
+            </li>
+            <li class="mobile-menu-item title">
+              <a href="./portfolio.html" class="link">Portfolio</a>
+            </li>
+            <li class="mobile-menu-item title">
+              <a href="" class="link current">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+
+        <address class="mobile-menu-address">
+          <ul class="mobile-contact list">
+            <li class="mobile-contact-item">
+              <a class="mobile-contact-phone link" href="tel:+110001111111"
+                >+11 (000) 111-11-11</a
+              >
+            </li>
+            <li class="mobile-contact-item">
+              <a
+                class="mobile-contact-mail link"
+                href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+        </address>
+
+        <ul class="mobile-social social-list">
+          <li class="card-social-item">
+            <a href="" class="social-link">
+              <svg class="card-social-icon" width="24" height="24">
+                <use href="./images/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="card-social-item">
+            <a href="" class="social-link">
+              <svg class="card-social-icon" width="24" height="24">
+                <use href="./images/sprite.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="card-social-item">
+            <a href="" class="social-link">
+              <svg class="card-social-icon" width="24" height="24">
+                <use href="./images/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="card-social-item">
+            <a href="" class="social-link">
+              <svg class="card-social-icon" width="24" height="24">
+                <use href="./images/sprite.svg#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <main>
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button type="button" class="hero-btn" data-modal-open>
+          <button type="button" class="hero-btn button" data-modal-open>
             Order Service
           </button>
         </div>
@@ -66,7 +143,7 @@
                   <use href="./images/sprite.svg#icon-antenna"></use>
                 </svg>
               </div>
-              <h3 class="subtitle">Strategy</h3>
+              <h3 class="features-title subtitle">Strategy</h3>
               <p>
                 Our goal is to identify the business problem to walk away with
                 the perfect and creative solution.
@@ -78,7 +155,7 @@
                   <use href="./images/sprite.svg#icon-clock"></use>
                 </svg>
               </div>
-              <h3 class="subtitle">Punctuality</h3>
+              <h3 class="features-title subtitle">Punctuality</h3>
               <p>
                 Bring the key message to the brand's audience for the best price
                 within the shortest possible time.
@@ -90,7 +167,7 @@
                   <use href="./images/sprite.svg#icon-diagram"></use>
                 </svg>
               </div>
-              <h3 class="subtitle">Diligence</h3>
+              <h3 class="features-title subtitle">Diligence</h3>
               <p>
                 Research and confirm brands that present the strongest digital
                 growth opportunities and minimize risk.
@@ -102,7 +179,7 @@
                   <use href="./images/sprite.svg#icon-astronaut"></use>
                 </svg>
               </div>
-              <h3 class="subtitle">Technologies</h3>
+              <h3 class="features-title subtitle">Technologies</h3>
               <p>
                 Design practice focused on digital experiences. We bring forth a
                 deep passion for problem-solving.
@@ -150,30 +227,30 @@
               <div class="team-card-content card-content">
                 <h3 class="subtitle">Mark Guerrero</h3>
                 <p>Product Designer</p>
-                <ul class="card-social-list list">
+                <ul class="card-social social-list">
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-instagram"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-twitter"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-facebook"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-linkedin"></use>
                       </svg>
@@ -187,30 +264,30 @@
               <div class="team-card-content card-content">
                 <h3 class="subtitle">Tom Ford</h3>
                 <p>Frontend Developer</p>
-                <ul class="card-social-list list">
+                <ul class="card-social social-list">
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-instagram"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-twitter"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-facebook"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-linkedin"></use>
                       </svg>
@@ -224,30 +301,30 @@
               <div class="team-card-content card-content">
                 <h3 class="subtitle">Camila Garcia</h3>
                 <p>Marketing</p>
-                <ul class="card-social-list list">
+                <ul class="card-social social-list">
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-instagram"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-twitter"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-facebook"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-linkedin"></use>
                       </svg>
@@ -261,30 +338,30 @@
               <div class="team-card-content card-content">
                 <h3 class="subtitle">Daniel Wilson</h3>
                 <p>UI Designer</p>
-                <ul class="card-social-list list">
+                <ul class="card-social social-list">
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-instagram"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-twitter"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-facebook"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="card-social-item">
-                    <a href="" class="card-social-link">
+                    <a href="" class="social-link">
                       <svg class="card-social-icon" width="16" height="16">
                         <use href="./images/sprite.svg#icon-linkedin"></use>
                       </svg>
@@ -348,7 +425,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer section">
       <div class="container">
         <div class="footer-logo">
           <a class="logo link" href="./index.html"><span>Web</span>Studio</a>
@@ -359,30 +436,30 @@
         </div>
         <div class="footer-social">
           <p>Social media</p>
-          <ul class="footer-social-list list">
+          <ul class="footer-social-list social-list">
             <li class="footer-social-item">
-              <a href="" class="footer-social-link">
+              <a href="" class="social-link">
                 <svg class="social-list-icon" width="24" height="24">
                   <use href="./images/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-social-item">
-              <a href="" class="footer-social-link">
+              <a href="" class="social-link">
                 <svg class="social-list-icon" width="24" height="24">
                   <use href="./images/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-social-item">
-              <a href="" class="footer-social-link">
+              <a href="" class="social-link">
                 <svg class="social-list-icon" width="24" height="24">
                   <use href="./images/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-social-item">
-              <a href="" class="footer-social-link">
+              <a href="" class="social-link">
                 <svg class="social-list-icon" width="24" height="24">
                   <use href="./images/sprite.svg#icon-linkedin"></use>
                 </svg>
@@ -503,5 +580,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
