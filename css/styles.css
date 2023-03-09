@@ -166,6 +166,8 @@ button {
 
 .container {
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -222,9 +224,9 @@ button {
   margin: 0 auto;
 }
 
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-  screen and (min-resolution: 192dpi) and (max-width: 767px),
-  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 428px),
+  screen and (min-resolution: 192dpi) and (max-width: 428px),
+  screen and (min-resolution: 2dppx) and (max-width: 428px) {
   .hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
@@ -232,10 +234,6 @@ button {
       ),
       url('../images/bg-mobile@2x.jpg');
   }
-}
-
-.hero .container {
-  padding: 112px 56px 112px 54px;
 }
 
 .hero-title {
@@ -414,6 +412,7 @@ button {
   top: 0;
   left: 0;
   z-index: 100;
+  overflow-y: auto;
 
   width: 100%;
   height: 100%;
@@ -431,7 +430,8 @@ button {
   transform: translate(-50%, -50%) scale(1);
   padding: 72px 16px 24px 16px;
 
-  width: 408px;
+  width: calc(100% - 32px);
+  max-width: 392px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -604,6 +604,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   margin-right: 8px;
   border: 1.25px solid var(--headings-dark-color);
   border-radius: 2px;
@@ -722,7 +723,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   transform: translateY(100%);
 
   font-weight: 400;
@@ -742,7 +743,19 @@ button {
 
 /* -----ADAPTIVE----- */
 
+@media screen and (orientation: landscape) and (max-height: 585px) {
+  .modal {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
 @media screen and (max-width: 1199px) {
+  .hero.section {
+    padding: 112px 0;
+  }
+
   .features-icon-block {
     display: none;
   }
@@ -774,9 +787,6 @@ button {
   .contact-item:not(:last-child) {
     margin-bottom: 4px;
   }
-  .hero .container {
-    padding: 112px 137px 108px 137px;
-  }
   .footer .container {
     flex-wrap: wrap;
     padding-left: 108px;
@@ -807,6 +817,9 @@ button {
   .link.current::after {
     display: none;
   }
+  .container {
+    max-width: 428px;
+  }
   .header {
     padding-bottom: 24px;
   }
@@ -819,6 +832,7 @@ button {
 
   .hero-title {
     display: block;
+    max-width: 318px;
     font-size: 36px;
     line-height: 1.11;
     margin-bottom: 72px;
@@ -842,8 +856,7 @@ button {
     text-align: center;
   }
   .footer-logo {
-    padding-left: 64px;
-    padding-right: 64px;
+    max-width: 268px;
   }
   .footer-form-block {
     width: 100%;
@@ -868,11 +881,10 @@ button {
     justify-content: center;
     width: 100%;
     height: 100%;
-    max-height: 796px;
     top: 0;
     left: 0;
+    overflow-y: scroll;
     background-color: var(--primary-white-color);
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
 
     opacity: 0;
     visibility: hidden;
@@ -893,7 +905,7 @@ button {
     display: flex;
     flex-direction: column;
     height: auto;
-    padding: 80px 40px 40px 40px;
+    padding: 80px 40px 24px 40px;
   }
   .mobile-menu-item {
     font-weight: 700;
@@ -924,15 +936,38 @@ button {
   .mobile-social.social-list {
     row-gap: 16px;
     column-gap: 56px;
+    padding-bottom: 16px;
   }
   /* -----MOBILE MENU----- */
 }
+@media screen and (max-width: 480px) {
+  .mobile-contact-phone {
+    font-size: 24px;
+  }
+  .mobile-social.social-list {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
 
-@media screen and (min-width: 480px) {
-  .container {
-    width: 428px;
-    margin-left: auto;
-    margin-right: auto;
+@media screen and (min-width: 429px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/bg-tablet.jpg');
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 429px),
+  screen and (min-resolution: 192dpi) and (min-width: 429px),
+  screen and (min-resolution: 2dppx) and (min-width: 429px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/bg-tablet@2x.jpg');
   }
 }
 
@@ -980,14 +1015,8 @@ button {
     color: var(--body-text-color);
   }
 
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url('../images/bg-tablet.jpg');
-  }
   .hero-title {
+    max-width: 494px;
     margin-bottom: 40px;
   }
 
@@ -1027,6 +1056,7 @@ button {
     width: 264px;
   }
   .modal {
+    max-width: 408px;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -1040,15 +1070,24 @@ button {
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-  screen and (min-resolution: 192dpi) and (min-width: 768px),
-  screen and (min-resolution: 2dppx) and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url('../images/bg-tablet@2x.jpg');
+      url('../images/people-office.jpg');
+  }
+}
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 769px),
+  screen and (min-resolution: 192dpi) and (min-width: 769px),
+  screen and (min-resolution: 2dppx) and (min-width: 769px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/people-office@2x.jpg');
   }
 }
 
@@ -1073,15 +1112,9 @@ button {
   .contact-item:not(:last-child) {
     margin-right: 40px;
   }
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url('../images/people-office.jpg');
-  }
-  .hero .container {
-    padding: 188px 317px;
+
+  .hero.section {
+    padding: 188px 0;
   }
   .hero-title {
     margin-bottom: 48px;
@@ -1151,17 +1184,5 @@ button {
   }
   .project-card-item {
     flex-basis: calc((100% - 2 * var(--card-gap)) / 3);
-  }
-}
-
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
-  screen and (min-resolution: 192dpi) and (min-width: 1200px),
-  screen and (min-resolution: 2dppx) and (min-width: 1200px) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url('../images/people-office@2x.jpg');
   }
 }
